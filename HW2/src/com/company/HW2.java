@@ -3,7 +3,7 @@ package com.company;
 import java.util.Scanner;
 
 public class HW2 {
-    public static void main(String[] args ){
+    public static void main(String[] args) {
         System.out.println("Triangles square is " + squareTr());
         System.out.println("*********************");
         System.out.println("entered number is " + evenNumber());
@@ -11,7 +11,7 @@ public class HW2 {
         System.out.println("Minimum modulo number is " + minNumber());
     }
 
-    public static double squareTr(){
+    public static double squareTr() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter the coordinates of triangle (x1 y1 x2 y2 x3 y3):");
         int x1 = scan.nextInt();
@@ -29,7 +29,7 @@ public class HW2 {
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter the integer number:");
         int n = scan.nextInt();
-        String ev = (n%2==0?"even":"not even");
+        String ev = (n % 2 == 0 ? "even" : "not even");
         return ev;
     }
 
@@ -39,8 +39,8 @@ public class HW2 {
         double a = scan.nextDouble();
         double b = scan.nextDouble();
         double c = scan.nextDouble();
-        double tmp = (Math.abs(a)<Math.abs(b)?a:b);
-        double min = (Math.abs(tmp)<Math.abs(c)?tmp:c);
+        double tmp = (Math.abs(a) < Math.abs(b) ? a : b);
+        double min = (Math.abs(tmp) < Math.abs(c) ? tmp : c);
         return min;
 
     }
