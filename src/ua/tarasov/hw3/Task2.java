@@ -10,10 +10,10 @@ public class Task2 {
         System.out.println("Введите строку для проверки - является ли она палиндромом:");
         Scanner scan = new Scanner(System.in);
         String strInput = scan.nextLine();
-        change(strInput);
+        checkPal(strInput);
     }
 
-    private static void change(String strInput) {
+    private static void checkPal(String strInput) {
 
         String strChange = strInput.replaceAll("\\s", "");
         StringBuilder stReverse = new StringBuilder(strChange).reverse();
