@@ -37,12 +37,12 @@ public class Task4 {
         System.out.println("Угадайте число в диапозоне [ " + min + ";" + max + " ]");
         System.out.print("Введите Ваше число: ");
         int b = scan.nextInt();
-        while (b < a) {
-            System.out.print("Мало, попробуйте еще раз: ");
-            b = scan.nextInt();
-        }
         while (b > a) {
             System.out.print("Много, попробуйте еще раз: ");
+            b = scan.nextInt();
+        }
+        while (b < a) {
+            System.out.print("Мало, попробуйте еще раз: ");
             b = scan.nextInt();
         }
         System.out.println("УРАААА! Угадал!");
