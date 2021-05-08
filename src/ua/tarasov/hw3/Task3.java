@@ -2,7 +2,7 @@ package ua.tarasov.hw3;
 
 import java.util.Scanner;
 
-public class Task3 {
+public class Task3<count> {
     public static void main(String[] args) {
         System.out.println("Введите строку для проверки на количество в ней слов:");
         Scanner scan = new Scanner(System.in);
@@ -18,22 +18,12 @@ public class Task3 {
             } else {
                 if (Character.isLetter(strInput.charAt(i - 1))) {
                     count++;
-                    if (Character.isDigit(strInput.charAt(i)) && Character.isLetter(strInput.charAt(i + 1))) {
-                        count -= 2;
-                    } else {
-                        continue;
-                    }
-                } else {
-                    continue;
+                    count = (Character.isDigit(strInput.charAt(i)) && Character.isLetter(strInput.charAt(i + 1))) ? (count - 2) : count;
                 }
+                continue;
             }
-
         }
-        if (Character.isLetter(strInput.charAt(strInput.length() - 1))) {
-            return count + 1;
-        }
+        count = (Character.isLetter(strInput.charAt(strInput.length() - 1))) ? count + 1 : count;
         return count;
-
-
     }
 }
