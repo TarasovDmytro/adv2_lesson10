@@ -7,18 +7,24 @@ public class Task2 {
         System.out.println("Введите строку для проверки - является ли она палиндромом:");
         Scanner scan = new Scanner(System.in);
         String strInput = scan.nextLine();
-        checkPal(strInput);
+        String strChange = delSpace(strInput);
+        System.out.println("Введенная строка " + checkPol(strChange) + " палиндромом");
     }
 
-    private static void checkPal(String strInput) {
-        String strChange = strInput.replaceAll("\\s", "");
+    private static String delSpace(String strInput) {
+        String outSpace = strInput.replaceAll("\\s", "");
+        return outSpace;
+    }
+
+    private static String checkPol(String strChange) {
+        String result;
         StringBuilder stReverse = new StringBuilder(strChange).reverse();
         if (strChange.equalsIgnoreCase(String.valueOf(stReverse))) {
-            System.out.println("Введенная строка является палиндромом");
+            result = "является";
         } else {
-            System.out.println("Введенная строка не является палиндромом");
+            result = "не является";
         }
-
+        return result;
     }
 
 }
