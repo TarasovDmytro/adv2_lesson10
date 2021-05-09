@@ -8,7 +8,8 @@ public class Task2 {
         Scanner scan = new Scanner(System.in);
         String strInput = scan.nextLine();
         String strChange = delSpace(strInput);
-        System.out.println("Введенная строка " + checkPol(strChange) + " палиндромом");
+        String chekPol = (checkPol(strChange) ? "является" : "не является");
+        System.out.println("Введенная строка " + chekPol + " палиндромом");
     }
 
     private static String delSpace(String strInput) {
@@ -16,15 +17,9 @@ public class Task2 {
         return outSpace;
     }
 
-    private static String checkPol(String strChange) {
-        String result;
+    private static boolean checkPol(String strChange) {
         StringBuilder stReverse = new StringBuilder(strChange).reverse();
-        if (strChange.equalsIgnoreCase(String.valueOf(stReverse))) {
-            result = "является";
-        } else {
-            result = "не является";
-        }
-        return result;
+        return strChange.equalsIgnoreCase(String.valueOf(stReverse));
     }
 
 }
