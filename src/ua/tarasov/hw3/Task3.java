@@ -14,13 +14,11 @@ public class Task3<count> {
         int count = 0;
         for (int i = 1; i < strInput.length(); i++) {
             if (Character.isLetter(strInput.charAt(i))) {
-                continue;
             } else {
                 if (Character.isLetter(strInput.charAt(i - 1))) {
                     count++;
                     count = (Character.isDigit(strInput.charAt(i)) && Character.isLetter(strInput.charAt(i + 1))) ? (count - 2) : count;
                 }
-                continue;
             }
         }
         count = (Character.isLetter(strInput.charAt(strInput.length() - 1))) ? count + 1 : count;
