@@ -10,6 +10,7 @@ public class Task4 {
         System.out.print("min: ");
         int min = scan.nextInt();
         int a = (int) (min + Math.random() * (max - min + 1));
+        System.out.println(a);
 
         guessNum(scan, a, min, max);
     }
@@ -18,13 +19,15 @@ public class Task4 {
         System.out.println("Угадайте число в диапозоне [ " + min + ";" + max + " ]");
         System.out.print("Введите Ваше число: ");
         int b = scan.nextInt();
-        while (b > a) {
-            System.out.print("Много, попробуйте еще раз: ");
-            b = scan.nextInt();
-        }
-        while (b < a) {
-            System.out.print("Мало, попробуйте еще раз: ");
-            b = scan.nextInt();
+        while (b != a) {
+            while (b > a) {
+                System.out.print("Много, попробуйте еще раз: ");
+                b = scan.nextInt();
+            }
+            while (b < a) {
+                System.out.print("Мало, попробуйте еще раз: ");
+                b = scan.nextInt();
+            }
         }
         System.out.println("УРАААА! Угадал!");
 
