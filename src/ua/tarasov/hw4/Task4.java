@@ -9,7 +9,7 @@ public class Task4 {
         for (int i = 0; i < intArray.length; i++) {
             intArray[i] = rand.nextInt();
         }
-        int[] modifiedArray = zeroReplacement(intArray);
+        zeroReplacement(intArray);
     }
 
     public static int[] zeroReplacement(int[] intArray) {
