@@ -1,33 +1,28 @@
 package ua.tarasov.hw4;
 
-
+import java.util.Arrays;
 import java.util.Random;
 
-public class Task2 {
+public class Task3 {
     public static void main(String[] args) {
         Random rand = new Random();
-        int[] intArray = new int[1000];
+        int[] intArray = new int[10];
         for (int i = 0; i < intArray.length; i++) {
             intArray[i] = rand.nextInt();
         }
-        System.out.println("В массиве " + countPrime(intArray) + " простых чисел");
+        System.out.println(Arrays.toString(intArray));
+        System.out.println("В массиве " + countComposite(intArray) + " составных чисел");
     }
 
-    private static int countPrime(int[] intArray) {
+    private static int countComposite(int[] intArray) {
         int count = 0;
-        boolean primeNum = false;
         for (int i = 0; i < intArray.length; i++) {
             if (intArray[i] > 1) {
                 for (int j = 2; j < intArray[i]; j++) {
                     if (intArray[i] % j == 0) {
-                        primeNum = false;
+                        count++;
                         break;
-                    } else {
-                        primeNum = true;
                     }
-                }
-                if (primeNum) {
-                    count++;
                 }
             }
         }
