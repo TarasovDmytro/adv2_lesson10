@@ -1,5 +1,6 @@
 package ua.tarasov.hw4;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Task4 {
@@ -9,7 +10,8 @@ public class Task4 {
         for (int i = 0; i < intArray.length; i++) {
             intArray[i] = rand.nextInt();
         }
-        zeroReplacement(intArray);
+        System.out.println(Arrays.toString(intArray));
+        System.out.println(Arrays.toString(zeroReplacement(intArray)));
     }
 
     public static int[] zeroReplacement(int[] intArray) {
