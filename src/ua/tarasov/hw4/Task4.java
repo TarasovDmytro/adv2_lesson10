@@ -5,13 +5,17 @@ import java.util.Random;
 
 public class Task4 {
     public static void main(String[] args) {
-        Random rand = new Random();
         int[] intArray = new int[2000];
-        for (int i = 0; i < intArray.length; i++) {
-            intArray[i] = rand.nextInt();
-        }
+        fillRandArray(intArray);
         System.out.println(Arrays.toString(intArray));
         System.out.println(Arrays.toString(zeroReplacement(intArray)));
+    }
+
+    private static void fillRandArray(int[] intArray) {
+        Random rand = new Random();
+        for (int i = 0; i < intArray.length; i++) {
+            intArray[i] = rand.nextInt(100000);
+        }
     }
 
     public static int[] zeroReplacement(int[] intArray) {
