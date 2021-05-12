@@ -15,15 +15,12 @@ public class Task1 {
     private static void fillRandArray(int[] intArray) {
         Random rand = new Random();
         for (int i = 0; i < intArray.length; i++) {
-            intArray[i] = rand.nextInt();
+            intArray[i] = rand.nextInt(10000);
         }
     }
 
     private static double geoMean(int[] intArray) {
-        double sum = 0;
-        for (int value : intArray) {
-            sum += value;
-        }
+        double sum = Arrays.stream(intArray).asDoubleStream().sum();
         return Math.pow(sum, (1.0 / intArray.length));
     }
 
