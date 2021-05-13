@@ -29,7 +29,7 @@ public class Task2 {
     private static void fillRandArray(int[][] intArray) {
         Random rand = new Random();
         for (int i = 0; i < intArray.length; i++) {
-            for (int j = 0; j < intArray.length; j++) {
+            for (int j = 0; j < intArray[i].length; j++) {
                 intArray[i][j] = rand.nextInt(100);
             }
         }
