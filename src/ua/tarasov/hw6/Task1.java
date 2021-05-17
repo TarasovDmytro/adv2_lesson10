@@ -17,11 +17,11 @@ public class Task1 {
         System.out.println("Model - " + phone1.model + ", Weight - " + phone1.weight + ", tel. num. - " + phone1.number + ";");
         System.out.println("Model - " + phone2.model + ", Weight - " + phone2.weight + ", tel. num. - " + phone2.number + ";");
         System.out.println("Model - " + phone3.model + ", Weight - " + phone3.weight + ", tel. num. - " + phone3.number + ";");
-        Phone.receiveCall(phone1.model);
-        System.out.println("Phone number - " + Phone.getNumber(phone1.number));
-        Phone.receiveCall(phone2.model);
-        System.out.println("Phone number - " + Phone.getNumber(phone2.number));
-        Phone.receiveCall(phone3.model);
-        System.out.println("Phone number - " + Phone.getNumber(phone3.number));
+        phone1.receiveCall(phone1.model);
+        System.out.println("Phone number - " + phone1.getNumber());
+        phone2.receiveCall(phone2.model);
+        System.out.println("Phone number - " + phone2.getNumber());
+        phone3.receiveCall(phone3.model);
+        System.out.println("Phone number - " + phone3.getNumber());
     }
 }

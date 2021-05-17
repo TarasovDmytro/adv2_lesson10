@@ -5,26 +5,26 @@ public class Phone {
     String model;
     double weight;
 
-    static void receiveCall(String name) {
+    void receiveCall(String name) {
         System.out.println("Звонит " + name);
     }
 
-    static int getNumber(int number) {
+    int getNumber() {
         return number;
     }
 
-    public Phone(int number, String model, double weight) {
+    Phone(int number, String model, double weight) {
         this.number = number;
         this.model = model;
         this.weight = weight;
     }
 
-    public Phone(int number, String model) {
+    Phone(int number, String model) {
         this.number = number;
         this.model = model;
     }
 
-    public Phone(){
+    public Phone() {
 
     }
 }
