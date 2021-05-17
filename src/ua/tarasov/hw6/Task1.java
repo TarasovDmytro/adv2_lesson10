@@ -14,9 +14,9 @@ public class Task1 {
         phone3.number = 662223334;
         phone3.model = "Iphon 12 pro";
         phone3.weight = 189.0;
-        System.out.println("Model - " + phone1.model + ", Weight - " + phone1.weight + ", tel. num. - " + phone1.number + ";");
-        System.out.println("Model - " + phone2.model + ", Weight - " + phone2.weight + ", tel. num. - " + phone2.number + ";");
-        System.out.println("Model - " + phone3.model + ", Weight - " + phone3.weight + ", tel. num. - " + phone3.number + ";");
+        phone1.printParameterValues();
+        phone2.printParameterValues();
+        phone3.printParameterValues();
         phone1.receiveCall(phone1.model);
         System.out.println("Phone number - " + phone1.getNumber());
         phone2.receiveCall(phone2.model);

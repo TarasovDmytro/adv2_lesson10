@@ -4,6 +4,9 @@ public class Phone {
     int number;
     String model;
     double weight;
+    void printParameterValues(){
+        System.out.println("Model - " + model + ", Weight - " + weight + ", tel. num. - " + number + ";");
+    }
 
     void receiveCall(String name) {
         System.out.println("Звонит " + name);
