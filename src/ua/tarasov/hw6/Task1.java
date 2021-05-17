@@ -12,7 +12,7 @@ public class Task1 {
         phone2.model = "Nokia One";
         phone2.weight = 131.0;
         phone3.number = 662223334;
-        phone3.model = "Iphon 12 pro";
+        phone3.model = "Iphone 12 pro";
         phone3.weight = 189.0;
         phone1.printParameterValues();
         phone2.printParameterValues();
