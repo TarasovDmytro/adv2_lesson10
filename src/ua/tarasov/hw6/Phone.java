@@ -27,7 +27,7 @@ public class Phone {
         this.model = model;
     }
 
-    public Phone() {
+    Phone() {
 
     }
 }
