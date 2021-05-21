@@ -7,6 +7,10 @@ public class Student {
     double averageMark;
 
     public Student(GraduateStudent gradStud) {
+        this.firstName = gradStud.firstName;
+        this.lastName = gradStud.lastName;
+        this.group = gradStud.group;
+        this.averageMark = gradStud.averageMark;
     }
 
     public Student(String firstName, String lastName, String group, double averageMark) {
@@ -15,11 +19,6 @@ public class Student {
         this.group = group;
         this.averageMark = averageMark;
     }
-
-    public Student() {
-
-    }
-
 
     protected int getScholarship() {
         return averageMark == 5 ? 100 : 80;
