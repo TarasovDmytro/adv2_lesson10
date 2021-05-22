@@ -1,7 +1,4 @@
 package ua.tarasov.modul1;
-// Найти количество различных элементов массива.
-// Пример: для 1 4 5 1 1 3 ответ 4.
-//*Создать метод, который принимает массив и возвращает количество. *
 
 public class Task1 {
     public static void main(String[] args) {
@@ -22,7 +19,7 @@ public class Task1 {
                 }
             }
         }
-        difCount = count - sameCount
+        difCount = count - sameCount;
         return difCount;
     }
 }
