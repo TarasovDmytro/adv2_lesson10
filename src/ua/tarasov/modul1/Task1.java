@@ -5,14 +5,24 @@ package ua.tarasov.modul1;
 
 public class Task1 {
     public static void main(String[] args) {
-        int[] array ={1, 4, 3, 1, 1, 4, 4};
-        int count = array.length;
+        int[] array = {1, 4, 5, 1, 1, 3};
+        System.out.println(difNumberArray(array));
+    }
+
+    private static int difNumberArray(int[] array) {
+        int sameCount = 0;
+        int count = 0;
+        int difCount = 0;
         for (int i = 0; i < array.length; i++) {
-            for (int j = i+1; j < array.length-1; j++) {
-                if (array[i] != array[j + 1]){
-                    count -= 1;
-                }count +=array.length -  count;
+            count++;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[i] == array[j]) {
+                    sameCount++;
+                    break;
+                }
             }
-        } System.out.println(count);
+        }
+        difCount = count - sameCount
+        return difCount;
     }
 }

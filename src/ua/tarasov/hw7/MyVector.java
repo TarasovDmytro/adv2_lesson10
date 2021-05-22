@@ -1,6 +1,5 @@
 package ua.tarasov.hw7;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class MyVector {
@@ -14,30 +13,39 @@ public class MyVector {
         this.coordinateZ = coordinateZ;
     }
 
-    public MyVector() {
-
-    }
-
-
-    public void vectorLength(MyVector vector) {
-//        MyVector[] myVector = MyVector.arrayVector(1);
-//        System.out.println("[ " + myVector[0].coordinateX + " ; " + myVector[0].coordinateY + " ; " + myVector[0].coordinateZ + " ]");
-        double vecLenght = Math.sqrt(vector.coordinateX * vector.coordinateX + vector.coordinateY * vector.coordinateY +
+    public double vectorLength(MyVector vector) {
+        double vectorLength = Math.sqrt(vector.coordinateX * vector.coordinateX + vector.coordinateY * vector.coordinateY +
                 vector.coordinateZ * vector.coordinateZ);
-        System.out.println("|{ " + vector.coordinateX + " ; " + vector.coordinateY + " ; " + vector.coordinateZ + " }| = " + vecLenght);
+        return vectorLength;
     }
 
-    public void multiVector(MyVector vector, MyVector vector1) {
-        MyVector multiVector = new MyVector((vector.coordinateY * vector1.coordinateZ - vector.coordinateZ * vector1.coordinateY),
-                (vector.coordinateZ * vector1.coordinateX - vector.coordinateX * vector1.coordinateZ),
-                (vector.coordinateX * vector1.coordinateY - vector.coordinateY * vector1.coordinateX));
-        System.out.println("{ " + vector.coordinateX + " ; " + vector.coordinateY + " ; " + vector.coordinateZ + " } * { "
-                + vector1.coordinateX + " ; " + vector1.coordinateY + " ; " + vector1.coordinateZ + " } = { "
-                + multiVector.coordinateX + " ; " + multiVector.coordinateY + " ; " + multiVector.coordinateZ + " }");
-
+    public MyVector vectorProductOfVectors(MyVector vector, MyVector otherVector) {
+        MyVector vectorProductOfVectors = new MyVector((vector.coordinateY * otherVector.coordinateZ - vector.coordinateZ *
+                otherVector.coordinateY), (vector.coordinateZ * otherVector.coordinateX - vector.coordinateX * otherVector.coordinateZ),
+                (vector.coordinateX * otherVector.coordinateY - vector.coordinateY * otherVector.coordinateX));
+        return vectorProductOfVectors;
     }
 
+    public double cosAngleBetweenVectors(MyVector vector, MyVector otherVector) {
+        double cosVectors = dotProductOfVectors(vector, otherVector) / vectorLength(vector) * vectorLength(otherVector);
+        return cosVectors;
+    }
 
+    public double dotProductOfVectors(MyVector vector, MyVector otherVector) {
+        double dotProduct = vector.coordinateX * otherVector.coordinateX + vector.coordinateY * otherVector.coordinateY +
+                vector.coordinateZ * otherVector.coordinateZ;
+        return dotProduct;
+    }
+
+    public MyVector addOfVectors(MyVector vector, MyVector otherVector) {
+        MyVector addOfVectors = new MyVector((vector.coordinateX + otherVector.coordinateX), (vector.coordinateY + otherVector.coordinateY), (vector.coordinateZ + otherVector.coordinateZ));
+        return addOfVectors;
+    }
+
+    public MyVector subOfVectors(MyVector vector, MyVector otherVector) {
+        MyVector subOfVectors = new MyVector((vector.coordinateX - otherVector.coordinateX), (vector.coordinateY - otherVector.coordinateY), (vector.coordinateZ - otherVector.coordinateZ));
+        return subOfVectors;
+    }
 
     public static MyVector[] arrayVector(int n) {
         MyVector[] vector = new MyVector[n];
@@ -47,7 +55,6 @@ public class MyVector {
         }
         return vector;
     }
-
 }
 
 
