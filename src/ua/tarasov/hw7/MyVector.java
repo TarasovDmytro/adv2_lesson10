@@ -13,7 +13,7 @@ public class MyVector {
         this.coordinateZ = coordinateZ;
     }
 
-    double vectorLength(MyVector vector) {
+    static double vectorLength(MyVector vector) {
         double vectorLength = Math.sqrt(vector.coordinateX * vector.coordinateX + vector.coordinateY * vector.coordinateY +
                 vector.coordinateZ * vector.coordinateZ);
         return vectorLength;
