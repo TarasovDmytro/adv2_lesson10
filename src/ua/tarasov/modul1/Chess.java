@@ -58,7 +58,7 @@ public class Chess {
     }
 
     private static int getCoordinateY(String[][] array, String str) {
-        int y = 0;
+        int y = -1;
         for (String[] strings : array) {
             for (int j = 0; j < array.length; j++) {
                 if (str.equals(strings[j])) {
