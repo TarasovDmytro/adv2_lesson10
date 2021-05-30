@@ -10,16 +10,14 @@ class ConverterChessCoordinatesToIndexes {
         this.indexJ = getIndexJ();
     }
 
-    void getIndexes(String location) {
-        this.indexI = -1;
-        this.indexJ = -1;
+    private void getIndexes(String location) {
+        setIndexI(-1);
+        setIndexJ(-1);
         for (int i = 0; i < ChessBord.chessBord().length; i++) {
             for (int j = 0; j < ChessBord.chessBord().length; j++) {
                 if (location.equals(ChessBord.chessBord()[i][j])) {
-                    this.indexI = i;
-                    this.indexJ = j;
-                    setIndexI(this.indexI);
-                    setIndexJ(this.indexJ);
+                    setIndexI(i);
+                    setIndexJ(j);
                     break;
                 }
             }
