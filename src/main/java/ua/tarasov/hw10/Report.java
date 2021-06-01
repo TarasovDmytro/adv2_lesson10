@@ -1,15 +1,16 @@
 package ua.tarasov.hw10;
 
-public class Report {
+public class Report extends ReportAbstract{
 
-    private String header;
-    private String body;
-    private String footer;
+    private final String header;
+    private final String body;
+    private final String footer;
 
     private Report(String header, String body, String footer) {
-        this.header = header;
+        super(header, footer);
+        this.header = super.getHeader();
         this.body = body;
-        this.footer = footer;
+        this.footer = super.getFooter();
     }
 
     public static ReportBuilder builder() {

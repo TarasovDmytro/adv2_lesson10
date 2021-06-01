@@ -3,9 +3,23 @@ package ua.tarasov.hw10;
 public class Main {
 
     public static void main(String[] args) {
+
         Report report = Report.builder().header("Header").body("Body").build();
         Report report1 = report.toBuilder().footer("Footer").build();
+        System.out.print("");
 
-        System.out.printf("");
+        Pow exp = (int number, int pow) ->{
+            int result = number;
+            for (int i = 1; i < pow; i++) {
+                result *= number;
+            }
+            return result;
+        };
+
+        System.out.println(exp.exponentiation(10, 5));
+
     }
+
 }
+
+
