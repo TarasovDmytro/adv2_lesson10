@@ -1,6 +1,6 @@
 package ua.tarasov.hw10;
 
-public class Report extends ReportAbstract{
+public class Report extends ReportAbstract {
 
     private final String header;
     private final String body;

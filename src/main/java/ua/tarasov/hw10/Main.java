@@ -8,18 +8,22 @@ public class Main {
         Report report1 = report.toBuilder().footer("Footer").build();
         System.out.print("");
 
-        Pow exp = (int number, int pow) ->{
-            int result = number;
+        Pow exp = (int number, int pow) -> {
+            int result;
+            if (pow != 0) {
+                result = number;
+            } else {
+                result = 1;
+            }
             for (int i = 1; i < pow; i++) {
                 result *= number;
             }
             return result;
         };
 
-        System.out.println(exp.exponentiation(10, 5));
+        System.out.println(exp.exponentiation(5, 2));
 
     }
-
 }
 
 

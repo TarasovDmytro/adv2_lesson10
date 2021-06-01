@@ -24,4 +24,5 @@ public abstract class ReportAbstract {
     void setFooter(String footer) {
         this.footer = footer;
     }
+
 }
