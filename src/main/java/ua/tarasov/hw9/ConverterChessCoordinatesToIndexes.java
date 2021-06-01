@@ -6,11 +6,9 @@ class ConverterChessCoordinatesToIndexes {
 
     ConverterChessCoordinatesToIndexes(String location) {
         getIndexes(location);
-        this.indexI = getIndexI();
-        this.indexJ = getIndexJ();
     }
 
-    private void getIndexes(String location) {
+    void getIndexes(String location) {
         setIndexI(-1);
         setIndexJ(-1);
         for (int i = 0; i < ChessBord.chessBord().length; i++) {

@@ -9,24 +9,25 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.doReturn;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ChessMoveTest {
 
+    @Mock
+    public ConverterChessCoordinatesToIndexes converter;
 
     ChessKnight validate = new ChessKnight();
     ChessMove start = new ChessMove();
     @InjectMocks
-    ChessMove finish = new ChessMove("c2");
-
-    @Mock
-    ConverterChessCoordinatesToIndexes converterMock;
+    public ChessMove finish = new ChessMove("b3");
 
     @Test
     public void validateMove_trueMove() {
 
-        Mockito.when(converterMock.getIndexI()).thenReturn(2);
-        Mockito.when(converterMock.getIndexJ()).thenReturn(1);
+        Mockito.when(converter.getIndexI()).thenReturn(8);
+        Mockito.when(converter.getIndexJ()).thenReturn(2);
         boolean result = validate.checkTurn(start.indexI, start.indexJ, finish.indexI, finish.indexJ);
         Assert.assertTrue(result);
     }
@@ -35,16 +36,16 @@ public class ChessMoveTest {
     @Test
     public void validateMove_falseMove() {
 
-        Mockito.when(converterMock.getIndexI()).thenReturn(8);
-        Mockito.when(converterMock.getIndexJ()).thenReturn(5);
+        Mockito.when(converter.getIndexI()).thenReturn(8);
+        Mockito.when(converter.getIndexJ()).thenReturn(5);
         boolean result = validate.checkTurn(start.indexI, start.indexJ, 8, 5);
         Assert.assertFalse(result);
     }
     @Test
     public void validateMove_outsideTheChessboard() {
 
-        Mockito.when(converterMock.getIndexI()).thenReturn(-1);
-        Mockito.when(converterMock.getIndexJ()).thenReturn(5);
+        Mockito.when(converter.getIndexI()).thenReturn(-1);
+        Mockito.when(converter.getIndexJ()).thenReturn(5);
         boolean result = validate.checkTurn(start.indexI, start.indexJ, -1, 5);
         Assert.assertFalse(result);
     }
