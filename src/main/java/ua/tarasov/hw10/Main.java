@@ -16,7 +16,9 @@ public class Main {
             return (pow == 0) ? 1 : result;
         };
 
-        System.out.println(exp.exponentiation(5, 5));
+        System.out.println(exp.exponentiation(5, 3));
+        System.out.println(exp.exponentiation(5, 0));
+        System.out.println(exp.exponentiation(0, 3));
 
     }
 }
