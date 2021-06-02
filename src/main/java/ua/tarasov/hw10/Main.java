@@ -9,19 +9,14 @@ public class Main {
         System.out.print("");
 
         Pow exp = (int number, int pow) -> {
-            int result;
-            if (pow != 0) {
-                result = number;
-            } else {
-                result = 1;
-            }
+            int result = number;
             for (int i = 1; i < pow; i++) {
                 result *= number;
             }
-            return result;
+            return (pow == 0) ? 1 : result;
         };
 
-        System.out.println(exp.exponentiation(5, 2));
+        System.out.println(exp.exponentiation(5, 5));
 
     }
 }
