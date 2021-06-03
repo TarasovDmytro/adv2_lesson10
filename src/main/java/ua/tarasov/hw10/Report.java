@@ -1,5 +1,7 @@
 package ua.tarasov.hw10;
 
+import java.util.Objects;
+
 public class Report extends ReportAbstract {
 
     private final String header;
@@ -55,4 +57,16 @@ public class Report extends ReportAbstract {
         }
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Report report = (Report) o;
+        return header.equals(report.header) && body.equals(report.body);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(header, body, footer);
+    }
 }
